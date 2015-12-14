@@ -1,2 +1,2 @@
-import Hello from './hello.jsx';
-import World from './world.jsx';
+import AddDependencies from './addDependencies.jsx';
+import ListDependencies from './listDependencies.jsx';

@@ -6,7 +6,6 @@ module.exports = {
         app: ["./src/main.js"]
     },
     output: {
-        // path: __dirname,
         path: path.resolve(__dirname, "build"),
         publicPath: "/assets/",
         filename: "bundle.js"
@@ -14,8 +13,12 @@ module.exports = {
     },
     module: {
         loaders: [{
+
+        // Less
             test: /\.less$/,
             loader: "style!css!less"
+
+        // jsx
         }, {
             test: /\.jsx?$/,
             exclude: /node_modules/,
@@ -23,6 +26,11 @@ module.exports = {
             query: {
               presets: ['react', 'es2015']
             }
+
+        // Images
+        }, {
+            test: /\.(png|jpg|gif)$/,
+            loader: 'url-loader?limit=8192'
         }]
     },
     plugins: [

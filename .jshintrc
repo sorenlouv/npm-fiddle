@@ -1,0 +1,10 @@
+{
+    "quotmark": "single",
+    "trailing": true,
+    "browser": true,
+    "devel": true,
+    "globals": {},
+    "undef": true,
+    "node": true,
+    "unused": true
+}
