@@ -53,7 +53,7 @@ var AddDependencies = React.createClass({
         <input type="text" onChange={this.search}/> <Spinner isLoading={this.state.isLoading}/>
         {resultNodes}
       </div>
-      );
+    );
   },
 });
 

@@ -1,16 +1,19 @@
 {
-  "name": "browser-modules",
+  "name": "npm-fiddle",
   "version": "1.0.0",
-  "description": "",
+  "description": "NPM fiddle",
   "main": "./src/app.js",
   "dependencies": {
     "babel-preset-react": "^6.1.18",
     "babelify": "^7.2.0",
+    "express": "^4.13.3",
     "file-loader": "^0.8.5",
     "lodash": "^3.10.1",
+    "npm-keys": "^0.9.1",
     "q": "^1.4.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "request-progress": "^0.4.0",
     "superagent": "^1.5.0",
     "url-loader": "^0.5.7"
   },
@@ -22,13 +25,17 @@
     "esprima-fb": "^15001.1001.0-dev-harmony-fb",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
+    "node-inspector": "^0.12.5",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base public/ --inline --hot"
+    "dev-client": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base public/ --inline --hot",
+    "debug": "./node_modules/node-inspector/bin/node-debug.js --web-port=5859 --debug-brk=false src/server/app.js",
+    "forever": "./node_modules/forever/bin/forever -w --watchDirectory src/server/ --watchIgnore src/server/data/ src/server/app.js",
+    "start": "node src/server/app.js"
   },
   "author": "slo",
   "license": "ISC"
